@@ -1,0 +1,28 @@
+<!-- <button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="changeRandomText()"
+>
+  Add Server
+</button>
+<br />
+<br />
+<p>{{ randomText }}</p>
+
+<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+
+<input type="text" class="form-control" [(ngModel)]="randomText" /> -->
+
+<div class="col-md-6 d-flex">
+  <input type="text" class="form-control" [(ngModel)]="username" />
+  <button class="btn btn-success" [disabled]="!username" (click)="submitFunc()">
+    Save
+  </button>
+</div>
+<p
+  [ngClass]="{ online: serverCreated == true }"
+  [ngStyle]="{ backgroundColor: getColor() }"
+  *ngIf="serverCreated"
+>
+  {{ pText }}
+</p>
