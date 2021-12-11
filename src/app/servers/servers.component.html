@@ -13,7 +13,7 @@
 
 <input type="text" class="form-control" [(ngModel)]="randomText" /> -->
 
-<div class="col-md-6 d-flex">
+<!-- <div class="col-md-6 d-flex">
   <input type="text" class="form-control" [(ngModel)]="username" />
   <button class="btn btn-success" [disabled]="!username" (click)="submitFunc()">
     Save
@@ -25,4 +25,21 @@
   *ngIf="serverCreated"
 >
   {{ pText }}
+</p> -->
+
+<button class="btn btn-primary mt-3" type="submit" (click)="toggleParagraph()">
+  Display Details
+</button>
+<p *ngIf="hide == ''">
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut neque
+  necessitatibus aliquid numquam similique odit voluptates consectetur deleniti!
+  Quae earum doloremque totam quaerat beatae! Velit amet dolore magni error
+  suscipit?
+</p>
+
+<p
+  *ngFor="let logItem of logArray; let i = index"
+  [ngClass]="{ online: i >= 5 }"
+>
+  {{ logItem }}
 </p>
